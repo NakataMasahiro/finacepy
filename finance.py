@@ -1,6 +1,7 @@
 #[] coding: utf-8
 
 import random
+import math
 
 def Calc_CompoundInterest(A, r, n):
     # Aは元金、rは年利、nは複利する年数（コメントの付け方はあとでもうちょっとちゃんとしたものにする）。
@@ -44,3 +45,11 @@ def randomwalk(steps, yini):
         position += step
         walk.append(position)
     return walk
+
+
+def two_asset_portfolio(r1, r2, sigma1, sigma2, sigma12, w1, w2):
+    # arg
+    # r1: 資産1の収益率 r2:資産2の収益率
+    # sigma1:資産1の分散 sigma2:資産2の分散 sigma12 資産1と2の共分散
+    
+    return math.sqrt(w1 * w1 * sigma1 ** 2 + 2 * w1 * w2 * sigma12 + w2 * w2 * sigma2 **2)
